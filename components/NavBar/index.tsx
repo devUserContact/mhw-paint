@@ -1,17 +1,21 @@
 export default function NavBar() {
   return (
-    <div>
-      <p className="text center">
-        <a href="/shop"> 
+    <div className="grid grid-cols-3">
+      <div>
+        <a className="" href="/shop"> 
           shop
         </a> 
-        <a href="/gallery"> 
+      </div>
+      <div>
+        <a className="" href="/gallery"> 
           gallery
         </a> 
-        <a href="/about"> 
+      </div>
+      <div>
+        <a className="" href="/about"> 
           about
         </a> 
-      </p>
+      </div>
     </div>
   );
 } 
