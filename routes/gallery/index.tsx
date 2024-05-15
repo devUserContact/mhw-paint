@@ -1,9 +1,5 @@
 import { parse } from "https://deno.land/std@0.224.0/toml/mod.ts";
 import NavBar from "../../components/NavBar/index.tsx";
-import {
-  ComponentChild,
-  VNode,
-} from "https://esm.sh/v128/preact@10.19.6/src/index.js";
 
 const Gallery = await Deno.readTextFile("./assets/Gallery.toml");
 const gallery: string | unknown = parse(Gallery);
@@ -12,7 +8,7 @@ export default function GalleryPage() {
   return (
     <div>
       <NavBar />
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 mt-10 ml-20 mr-20 place-items-center">
         {gallery.work.map(
           (
             work: {
