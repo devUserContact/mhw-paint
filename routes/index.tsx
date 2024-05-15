@@ -2,11 +2,12 @@ import NavBar from "../components/NavBar/index.tsx";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <NavBar />
-      <div>
-        <h1>mhwPaint</h1>
-    </div>
+      <div className="grid h-80 place-items-center">
+        <h1 className="grid">mhwPaint</h1>
+        <h2 className="grid">artist located in CA</h2>
+      </div>
     </div>
   );
 }
