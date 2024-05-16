@@ -8,7 +8,7 @@ export default function GalleryPage() {
   return (
     <div>
       <NavBar />
-      <div className="grid grid-cols-2 mt-10 ml-20 mr-20 place-items-center">
+      <div className="grid-gallery">
         {gallery.work.map(
           (
             work: {
