@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+        font-family: 'geist';
+        src: url(/fonts/Geist-Regular.otf) format('otf');
+    }
+}
+
 @layer components {
   .grid-gallery {
     @apply grid grid-cols-1 place-items-center pt-10 md:grid-cols-2;
