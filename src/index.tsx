@@ -20,9 +20,19 @@ const About = lazy(() => import("./pages/About"));
 const App = props => (
   <>
     <nav className="grid grid-cols-3 pt-5 pb-5 bg-sky-300">
-      <a href="/">🎨</a>
-      <a href="/gallery">gallery</a>
-      <a href="/about">about</a>
+      <div className="ml-10">
+        <a className="" href="/">🎨</a>
+      </div>
+      <div className="text-center">
+        <a className="" href="/gallery">
+          gallery
+        </a>
+      </div>
+      <div className="text-center">
+        <a className="" href="/about">
+          about
+        </a>
+      </div>
     </nav>
     {props.children}
   </>
