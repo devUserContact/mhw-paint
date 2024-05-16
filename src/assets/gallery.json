@@ -1,0 +1,485 @@
+{
+  "work": [
+    {
+      "image_url": "",
+      "medium": "watercolor on cotton paper",
+      "number": 37,
+      "price": 400.0,
+      "size": [
+        11.6,
+        16.5
+      ],
+      "sold": false,
+      "title": "Terminal Ave.",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "watercolor on cotton paper",
+      "number": 36,
+      "price": 400.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Alleyway in Spring",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "watercolor on cotton paper",
+      "number": 35,
+      "price": 300.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Virginia Corridor",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "watercolor on cotton paper",
+      "number": 34,
+      "price": 300.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Yosemite Blvd.",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "watercolor on cotton paper",
+      "number": 33,
+      "price": 300.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Almond Orchards",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "oil on paper",
+      "number": 32,
+      "price": 400.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Woman in Alameda",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "watercolor on cotton paper",
+      "number": 31,
+      "price": 40.0,
+      "size": [
+        4,
+        4
+      ],
+      "sold": false,
+      "title": "Cloud Study",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "watercolor on cotton paper",
+      "number": 30,
+      "price": 40.0,
+      "size": [
+        4,
+        4
+      ],
+      "sold": false,
+      "title": "Pink Sunset",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 29,
+      "price": 40.0,
+      "size": [
+        5.5,
+        8.5
+      ],
+      "sold": false,
+      "title": "Brunnhilde",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 28,
+      "price": 40.0,
+      "size": [
+        5.5,
+        8.5
+      ],
+      "sold": false,
+      "title": "humans",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 27,
+      "price": 40.0,
+      "size": [
+        5.5,
+        8.5
+      ],
+      "sold": false,
+      "title": "US Politician",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 26,
+      "price": 40.0,
+      "size": [
+        5.5,
+        8.5
+      ],
+      "sold": false,
+      "title": "Complex",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "gouache on paper",
+      "number": 25,
+      "price": 80.0,
+      "size": [
+        5,
+        5
+      ],
+      "sold": false,
+      "title": "Night Mask",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "gouache on paper",
+      "number": 24,
+      "price": 80.0,
+      "size": [
+        5,
+        5
+      ],
+      "sold": false,
+      "title": "San Diego",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "gouache on paper",
+      "number": 23,
+      "price": 60.0,
+      "size": [
+        5,
+        5
+      ],
+      "sold": false,
+      "title": "Cat",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "oil pastel on paper",
+      "number": 22,
+      "price": 80.0,
+      "size": [
+        5,
+        6.5
+      ],
+      "sold": false,
+      "title": "Brunette",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "oil pastel on paper",
+      "number": 21,
+      "price": 80.0,
+      "size": [
+        5,
+        6.6
+      ],
+      "sold": false,
+      "title": "Celestial Egg",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "oil pastel on paper",
+      "number": 20,
+      "price": 200.0,
+      "size": [
+        7,
+        9.5
+      ],
+      "sold": false,
+      "title": "Suburb from Claus Rd.",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "oil pastel on paper",
+      "number": 19,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Green Man",
+      "year_created": "2024"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 18,
+      "price": 200.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Frenchie",
+      "year_created": "2023"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 17,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "View From an Apartment",
+      "year_created": "2023"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 16,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Tome",
+      "year_created": "2021"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 15,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Assent",
+      "year_created": "2021"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 14,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Reveal",
+      "year_created": "2021"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 13,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "The Musician",
+      "year_created": "2021"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 12,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "Bliss",
+      "year_created": "2021"
+    },
+    {
+      "image_url": "",
+      "medium": "marker on paper",
+      "number": 11,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "eternal",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "marker on paper",
+      "number": 10,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "twenty-four hours",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "marker on paper",
+      "number": 9,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "conversation",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "marker on paper",
+      "number": 8,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "happiness",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "marker on paper",
+      "number": 7,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "pile",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 6,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "entertainer",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 5,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "vision",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 4,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "sprite",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 3,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "stone",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 2,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "specter",
+      "year_created": "c. 201-"
+    },
+    {
+      "image_url": "",
+      "medium": "ink on paper",
+      "number": 1,
+      "price": 100.0,
+      "size": [
+        9,
+        12
+      ],
+      "sold": false,
+      "title": "passage",
+      "year_created": "c. 201-"
+    }
+  ]
+}
