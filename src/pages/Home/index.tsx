@@ -7,6 +7,6 @@ export default function Home() {
         <h1 className="grid text-xl">mhwPaint</h1>
         <h1 className="grid text-center">artist from CA</h1>
       </div>
-    </div>   
-  )
+    </div>
+  );
 }
