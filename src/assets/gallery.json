@@ -1,19 +1,6 @@
 {
   "work": [
     {
-      "image_url": "",
-      "medium": "watercolor on cotton paper",
-      "number": 37,
-      "price": 400.0,
-      "size": [
-        11.6,
-        16.5
-      ],
-      "sold": false,
-      "title": "Terminal Ave.",
-      "year_created": "2024"
-    },
-    {
       "image_url": "https://imagedelivery.net/mKjOxek3QZwwBWUu82qeLg/f71dd2c4-f6c2-43db-d951-9e61e4e92b00/public",
       "medium": "watercolor on cotton paper",
       "number": 36,
@@ -258,19 +245,6 @@
       ],
       "sold": false,
       "title": "Frenchie",
-      "year_created": "2023"
-    },
-    {
-      "image_url": "",
-      "medium": "ink on paper",
-      "number": 17,
-      "price": 100.0,
-      "size": [
-        9,
-        12
-      ],
-      "sold": false,
-      "title": "View From an Apartment",
       "year_created": "2023"
     },
     {
