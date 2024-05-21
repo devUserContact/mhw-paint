@@ -8,18 +8,19 @@ export default function About() {
         I am a human and a painter.
         <br />
         <br />I am currently in the process of building this site.
-        <br />I hope to implement a function that facilitates the purchasing of my art
-        via PayPal with the ability to make and except offers!
-        <br /> 
-        <br /> 
-        I also hope to include a contact page for commissions and general requests.
-        <br /> 
-        <br /> 
+        <br />I hope to implement a function that facilitates the purchasing of
+        my art via PayPal with the ability to make and except offers!
+        <br />
+        <br />
+        I also hope to include a contact page for commissions and general
+        requests.
+        <br />
+        <br />
         In the meantime you are free to enjoy the gallery.
-        <br /> 
-        <br /> 
+        <br />
+        <br />
         thank you for stopping by,
-        <br /> 
+        <br />
         mhw 🎨
       </p>
     </div>
