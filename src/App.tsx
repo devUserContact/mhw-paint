@@ -15,11 +15,12 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 const Home = lazy(() => import("./pages/Home"));
 const Gallery = lazy(() => import("./pages/Gallery"));
+const Work = lazy(() => import("./pages/Work"));
 const About = lazy(() => import("./pages/About"));
 
 const App = props => (
   <>
-    <nav className="grid grid-cols-3 pt-5 pb-5 bg-sky-300">
+    <nav class="grid grid-cols-3 pt-5 pb-5 bg-sky-300">
       <a href="/">🎨</a>
       <a href="/gallery">gallery</a>
       <a href="/about">about</a>
@@ -33,6 +34,7 @@ render(
     <Router root={App}>
       <Route path="/" component={Home} />
       <Route path="/gallery" component={Gallery} />
+      <Route path="/gallery/:work" component={Work} />
       <Route path="/about" component={About} />
     </Router>
   ),
