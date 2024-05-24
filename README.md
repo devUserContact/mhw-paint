@@ -1,4 +1,5 @@
-## Usage
+## mhwPaint frontend webiste
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ce4eb977-9cbf-40d9-84fa-fd6b1d03502e/deploy-status)](https://app.netlify.com/sites/mhwpaint/deploys)
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
 
