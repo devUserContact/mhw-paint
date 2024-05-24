@@ -1,25 +1,25 @@
 import type { Component } from "solid-js";
 import { createResource, For, Match, Switch } from "solid-js";
-//import Works from "../../assets/gallery.json";
+
 type Works = {
   id: number;
   title: string;
   year_created: string;
   medium: string;
   size: string;
-  description: string;
+  image_url: string;
   number: number;
+  description: string;
+  price: number;
   sold: number;
   accepting_offers: number;
 };
 
 export default function Gallery() {
-
   const [works] = createResource(async () => {
-    const response = await fetch("https://artusercontact.com/mhwpaint/gallery");
+    const response = await fetch("http://localhost:3000/mhwpaint/gallery");
     return (await response.json()) as Works[];
   });
-
 
   return (
     <Switch>
