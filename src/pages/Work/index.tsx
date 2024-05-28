@@ -27,7 +27,7 @@ export default function Work() {
           </div>
           <div class='mt-auto mb-auto mr-auto ml-10 text-left'>
             <p class=''>mhw</p>
-            <p class=''>{work().title}</p>
+            <p class='italic'>{work().title}</p>
             <br />
             <p class=''>{work().year_created}</p>
             <p class=''>{work().medium}</p>
