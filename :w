@@ -1,0 +1,27 @@
+import type { Component } from 'solid-js'
+import { Show, Suspense, createResource } from 'solid-js'
+import { useParams } from '@solidjs/router'
+
+export default function Work() {
+  const [work] = createResource(async () => {
+    deferStream: true
+    const params = useParams()
+    let uniqe_id = params.work.split('--').pop()
+    const response = await fetch(
+      `http://localhost:3000/mhwpaint/gallery/${uniqe_id}`,
+    )
+    let work = await response.json()
+    console.debug(work[0])
+    return await work[0];
+  })
+
+  return (
+    <Suspense>
+      <Show when={work}>
+        <div class='grid grid-cols-1 mt-10 place-items-center'>
+          <p>{work}</p>
+        </div>
+      </Show>
+    </Suspense>
+  )
+}
