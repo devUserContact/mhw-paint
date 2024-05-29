@@ -1,10 +1,10 @@
-import type { Component } from "solid-js";
+import type { Component } from 'solid-js'
 
 export default function About() {
   return (
-    <div className="grid grid-cols-1 mt-10 place-items-center">
-      <h1 className="w-1/2 text-2xl">I go by Maxwell-</h1>
-      <p className="mt-5 w-1/2 text-m">
+    <div class='grid grid-cols-1 mt-10 place-items-center'>
+      <h1 class='w-1/2 text-2xl'>I go by Maxwell-</h1>
+      <p class='mt-5 w-1/2 text-m'>
         I am a human and a painter.
         <br />
         <br />I am currently in the process of building this site.
@@ -16,7 +16,22 @@ export default function About() {
         requests.
         <br />
         <br />
-        In the meantime you are free to enjoy the gallery.
+        In the meantime you are free to enjoy the 
+        <a
+          class='italic text-blue-500'
+          href='https://www.mhwpaint.com/gallery'
+        >
+          gallery 
+        </a>
+        or my 
+        <a
+          class='italic text-blue-500'
+          href='https://linktr.ee/mhwpaint'
+          target='_blank'
+        >
+          socials
+        </a>
+        .
         <br />
         <br />
         thank you for stopping by,
@@ -24,5 +39,5 @@ export default function About() {
         mhw 🎨
       </p>
     </div>
-  );
+  )
 }
