@@ -19,7 +19,7 @@ const About = lazy(() => import('./pages/About'))
 
 const App = (props) => (
   <>
-    <nav class='grid grid-cols-3 pt-5 pb-5 bg-sky-300'>
+    <nav>
       <a href='/'>🎨</a>
       <a href='/gallery'>gallery</a>
       <a href='/about'>about</a>
