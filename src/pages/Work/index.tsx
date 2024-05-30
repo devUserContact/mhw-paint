@@ -8,7 +8,7 @@ export default function Work() {
     const params = useParams()
     let uniqe_id = params.work.split('--').pop()
     const response = await fetch(
-      `https://artusercontact.com/mhwpaint/gallery/${uniqe_id}`,
+      `http://localhost:3000/mhwpaint/gallery/${uniqe_id}`,
     )
     let work = await response.json()
     return work[0]
@@ -20,7 +20,7 @@ export default function Work() {
         <div class='grid grid-cols-2 mt-10'>
           <div class=''>
             <img
-              class='w-4/5 float-right'
+              class='w-4/5 mb-10 float-right'
               src={work().image_url}
               alt={work().title}
             />
@@ -36,6 +36,10 @@ export default function Work() {
             </p>
             <br />
             <p class=''>price: ${work().price}.00</p>
+            <br/>
+            <button class='bg-sky-300 hover:bg-sky-400 text-white font-bold py-1 px-3 rounded-md'>
+              add to cart
+            </button>
           </div>
         </div>
       </Show>

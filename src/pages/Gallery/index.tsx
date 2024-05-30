@@ -4,7 +4,7 @@ import { createResource, For, Suspense, Show } from 'solid-js'
 export default function Gallery() {
   const [works] = createResource(async () => {
     deferStream: true
-    const response = await fetch('https://artusercontact.com/mhwpaint/gallery')
+    const response = await fetch('http://localhost:3000/mhwpaint/gallery')
     return await response.json()
   })
   return (
