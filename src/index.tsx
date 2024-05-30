@@ -5,6 +5,7 @@ import { render } from 'solid-js/web'
 import { Router, Route } from '@solidjs/router'
 
 import App from './App'
+import Cart from './pages/Cart'
 
 const root = document.getElementById('root')
 
@@ -26,6 +27,7 @@ render(
       <Route path='/gallery' component={Gallery} />
       <Route path='/gallery/:work' component={Work} />
       <Route path='/about' component={About} />
+      <Route path='/cart' component={Cart} />
     </Router>
   ),
   root!,

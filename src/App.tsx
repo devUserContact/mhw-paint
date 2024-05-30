@@ -1,7 +1,7 @@
 export default function App(props: any) {
   return (
     <>
-      <nav class='grid grid-cols-3 pt-5 pb-5 bg-sky-100'>
+      <nav class='grid grid-cols-4 pt-5 pb-5 bg-sky-100'>
         <div class='ml-10'>
           <a class='' href='/'>
             🎨
@@ -15,6 +15,11 @@ export default function App(props: any) {
         <div class='text-center'>
           <a class='' href='/about'>
             about
+          </a>
+        </div>
+        <div class='mr-10 text-right '>
+          <a class='' href='/cart'>
+            🛍️
           </a>
         </div>
       </nav>
