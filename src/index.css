@@ -4,7 +4,12 @@
 
 @layer base {
   @font-face {
-    font-family: "geist";
-    src: url(fonts/Geist-Regular.otf) format("otf");
+    font-family: "Geist";
+    src: url("fonts/Geist-Regular.otf")
+  }
+  html {
+    font-family: geist;
+    font-size: 18px;
   }
 }
+
