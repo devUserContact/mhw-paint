@@ -35,11 +35,15 @@ export default function Work() {
               {work().size[0]} x {work().size[1]} inches
             </p>
             <br />
-            <p class=''>price: ${work().price}.00</p>
-            <br/>
-            <button class='bg-sky-300 hover:bg-sky-400 text-white font-bold py-1 px-3 rounded-md'>
-              add to cart
-            </button>
+            <Show when={work().sold == 1}>
+              <p class='bold'>SOLD</p>
+            </Show>
+            <Show when={work().sold == 0}>
+              <p class=''>price: ${work().price}.00</p>
+              <button class='mt-2 bg-sky-300 hover:bg-sky-400 text-white font-bold py-1 px-3 rounded-md'>
+                add to cart
+              </button>
+            </Show>
           </div>
         </div>
       </Show>
