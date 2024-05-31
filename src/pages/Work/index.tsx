@@ -1,6 +1,7 @@
-import { Show, Suspense, createResource, createSignal } from 'solid-js'
+import { Show, Suspense, createResource } from 'solid-js'
 import { useParams } from '@solidjs/router'
-import { makePersisted } from '@solid-primitives/storage'
+import { state, setState } from '../../stores/CartStore'
+import { produce } from 'solid-js/store'
 
 export default function Work() {
   const [work] = createResource(async () => {
@@ -13,17 +14,29 @@ export default function Work() {
     let work = await response.json()
     return work[0]
   })
-  const storeInCart = (id: any) => {
-    let idList = localStorage.getItem('ids')
-    if (idList == null) {
-      localStorage.setItem('ids', id)
-    } else if (idList.split(' ').includes(id)) {
+
+  const addToCart = (id: any) => {
+    //    setState(produce((state) => state.cart.push(id)))
+    //    setState('cartCount', state.cartCount + 1)
+
+    let idList = state.cart.join(' ')
+    if (idList == '') {
+      setState(produce((state) => state.cart.push(id)))
+      setState('cartCount', state.cartCount + 1)
+    } else if (idList.includes(id)) {
       return
     } else if (id !== null) {
-      let ids = idList + ' ' + id
-      localStorage.setItem('ids', ids)
+      setState(produce((state) => state.cart.push(id)))
+      setState('cartCount', state.cartCount + 1)
+    //        let ids = idList + ' ' + id
+    //        localStorage.setItem('ids', ids)
     }
+    //    const cartList = [...new Set(localStorage.getItem('ids')?.split(' '))]
+    //    setItemCount(cartList.length)
+
+    console.log(state.cart.join(' '), state.cartCount)
   }
+
   return (
     <Suspense>
       <Show when={work()}>
@@ -52,7 +65,7 @@ export default function Work() {
               <p class=''>price: ${work().price}.00</p>
               <button
                 class='mt-2 bg-sky-300 hover:bg-sky-400 text-white font-bold py-1 px-3 rounded-md'
-                onClick={[storeInCart, work().unique_id]}
+                onClick={[addToCart, work().unique_id]}
               >
                 add to cart
               </button>

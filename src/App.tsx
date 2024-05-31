@@ -1,3 +1,5 @@
+import { state, setState } from './stores/CartStore'
+
 export default function App(props: any) {
   return (
     <>
@@ -19,7 +21,7 @@ export default function App(props: any) {
         </div>
         <div class='mr-10 text-right '>
           <a class='' href='/cart'>
-            🛍️
+            🛍️ <p class='inline text-xs'>{state.cartCount}</p>
           </a>
         </div>
       </nav>

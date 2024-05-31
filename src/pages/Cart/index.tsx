@@ -1,8 +1,12 @@
+import { Show, Suspense, createResource } from 'solid-js'
+import { state, setState } from '../../stores/CartStore'
+
 export default function Cart() {
-  const cartItem = localStorage.getItem('ids')
+  const cartList = [...new Set(localStorage.getItem('ids')?.split(' '))]
+
   return (
     <div class='grid grid-cols-1'>
-      {cartItem}
+      {state.cart.join(' ')}
     </div>
   ) 
 }
