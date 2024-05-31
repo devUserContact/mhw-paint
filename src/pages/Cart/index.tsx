@@ -1,29 +1,38 @@
 import { createResource, Suspense, Show, For } from 'solid-js'
-import { useParams, useNavigate } from '@solidjs/router'
-import { produce } from 'solid-js/store'
+import { useParams, useNavigate, useLocation } from '@solidjs/router'
 
 import { state, setState } from '../../stores/CartStore'
 
 export default function Cart() {
-  const [cart] = createResource(async () => {
-    const params = useParams()
+  const params = useParams()
+  const navigate = useNavigate()
+
+  const [cart] = createResource(
+    () => params.cartItems,
+    fetchItems,
+    { deferStream: true },
+  )
+
+  async function fetchItems() {
     let cartItems = params.cartItems
     const response = await fetch(
       `http://localhost:3000/mhwpaint/cart/${cartItems}`,
     )
     let cart = await response.json()
     return cart
-  })
+  }
+
   const removeCartItem = (id: any) => {
     let cartWithItemRemoved = state.cart.filter((item: any) => item !== id)
     setState('cart', cartWithItemRemoved)
     setState('cartCount', state.cartCount - 1)
-
+    let newUrl = `/cart/${state.cart.join('-')}`
+    navigate(newUrl, { replace: true })
   }
 
   return (
     <Suspense>
-      <Show when={cart}>
+      <Show when={cart()}>
         <div class='grid grid-cols-4'>
           <div class='grid col-span-3'>
             <For each={cart()}>
