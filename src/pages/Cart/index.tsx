@@ -7,11 +7,9 @@ export default function Cart() {
   const params = useParams()
   const navigate = useNavigate()
 
-  const [cart] = createResource(
-    () => params.cartItems,
-    fetchItems,
-    { deferStream: true },
-  )
+  const [cart] = createResource(() => params.cartItems, fetchItems, {
+    deferStream: true,
+  })
 
   async function fetchItems() {
     let cartItems = params.cartItems
