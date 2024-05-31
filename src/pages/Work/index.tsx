@@ -1,7 +1,8 @@
 import { Show, Suspense, createResource } from 'solid-js'
 import { useParams } from '@solidjs/router'
-import { state, setState } from '../../stores/CartStore'
 import { produce } from 'solid-js/store'
+
+import { state, setState } from '../../stores/CartStore'
 
 export default function Work() {
   const [work] = createResource(async () => {
@@ -16,9 +17,6 @@ export default function Work() {
   })
 
   const addToCart = (id: any) => {
-    //    setState(produce((state) => state.cart.push(id)))
-    //    setState('cartCount', state.cartCount + 1)
-
     let idList = state.cart.join(' ')
     if (idList == '') {
       setState(produce((state) => state.cart.push(id)))
@@ -28,12 +26,7 @@ export default function Work() {
     } else if (id !== null) {
       setState(produce((state) => state.cart.push(id)))
       setState('cartCount', state.cartCount + 1)
-    //        let ids = idList + ' ' + id
-    //        localStorage.setItem('ids', ids)
     }
-    //    const cartList = [...new Set(localStorage.getItem('ids')?.split(' '))]
-    //    setItemCount(cartList.length)
-
     console.log(state.cart.join(' '), state.cartCount)
   }
 

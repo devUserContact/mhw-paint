@@ -20,7 +20,7 @@ export default function App(props: any) {
           </a>
         </div>
         <div class='mr-10 text-right '>
-          <a class='' href='/cart'>
+          <a class='' href={'/cart/' + state.cart.join('-')}>
             🛍️ <p class='inline text-xs'>{state.cartCount}</p>
           </a>
         </div>
