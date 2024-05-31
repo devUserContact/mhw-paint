@@ -48,14 +48,14 @@ export default function Work() {
             <p class=''>{work().year_created}</p>
             <p class=''>{work().medium}</p>
             <p class=''>
-              {work().size[0]} x {work().size[1]} inches
+            {`${work().size[0]} x ${work().size[1]} inches`}
             </p>
             <br />
             <Show when={work().sold == 1}>
               <p class='bold'>SOLD</p>
             </Show>
             <Show when={work().sold == 0}>
-              <p class=''>price: ${work().price}.00</p>
+              <p class=''>{`price: $${work().price}.00`}</p>
               <button
                 class='mt-2 bg-sky-300 hover:bg-sky-400 text-white font-bold py-1 px-3 rounded-md'
                 onClick={[addToCart, work().unique_id]}

@@ -1,4 +1,3 @@
-import type { Component } from 'solid-js'
 import { createResource, For, Suspense, Show } from 'solid-js'
 
 export default function Gallery() {
