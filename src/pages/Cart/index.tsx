@@ -43,7 +43,7 @@ export default function Cart() {
                       alt={cartItem.title}
                     />
                   </div>
-                  <div class='grid w-3/5'>
+                  <div class='grid mb-auto w-3/5 '>
                     <button
                       class='mt-auto mb-auto ml-auto pl-2 pr-2 bg-red-400 hover:bg-red-500 rounded-lg'
                       onClick={[removeCartItem, cartItem.unique_id]}
