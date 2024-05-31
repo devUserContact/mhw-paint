@@ -1,5 +1,5 @@
 import { createResource, Suspense, Show, For } from 'solid-js'
-import { useParams } from '@solidjs/router'
+import { useParams, useNavigate } from '@solidjs/router'
 import { produce } from 'solid-js/store'
 
 import { state, setState } from '../../stores/CartStore'
@@ -14,6 +14,12 @@ export default function Cart() {
     let cart = await response.json()
     return cart
   })
+  const removeCartItem = (id: any) => {
+    let cartWithItemRemoved = state.cart.filter((item: any) => item !== id)
+    setState('cart', cartWithItemRemoved)
+    setState('cartCount', state.cartCount - 1)
+
+  }
 
   return (
     <Suspense>
@@ -30,9 +36,17 @@ export default function Cart() {
                       alt={cartItem.title}
                     />
                   </div>
-                  <div class='grid mt-auto mb-auto'>
-                    <p class='italic'>{cartItem.title}</p>
-                    <p>{`$${cartItem.price}.00`}</p>
+                  <div class='grid w-3/5'>
+                    <button
+                      class='mt-auto mb-auto ml-auto pl-2 pr-2 bg-red-400 hover:bg-red-500 rounded-lg'
+                      onClick={[removeCartItem, cartItem.unique_id]}
+                    >
+                      <p class='text-right text-white text-sm'>X</p>
+                    </button>
+                    <div class='mt-auto mb-auto'>
+                      <p class='italic'>{cartItem.title}</p>
+                      <p>{`$${cartItem.price}.00`}</p>
+                    </div>
                   </div>
                 </div>
               )}
@@ -40,7 +54,17 @@ export default function Cart() {
           </div>
           <div class='grid col-span-1'>
             <div class='mt-2 border-l-2 border-l-slate-600'>
-              <p class='ml-5'>total:</p>
+              <p class='ml-6'>{`items:`}</p>
+              <For each={cart()}>
+                {(cartItem: any) => (
+                  <p class='text-right mr-6'>{`${cartItem.price}.00`}</p>
+                )}
+              </For>
+              <p class='ml-6'>{`tax:`}</p>
+              <p class='ml-6'>{`shipping:`}</p>
+              <p class='mt-2 mb-4 ml-6'>{`+`}</p>
+              <p class='ml-4 mr-4 border-t-2 border-t-slate-600'></p>
+              <p class='mt-4 ml-6'>{`total:`}</p>
             </div>
           </div>
         </div>
