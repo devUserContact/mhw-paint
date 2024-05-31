@@ -1,6 +1,6 @@
-import type { Component } from 'solid-js'
-import { Show, Suspense, createResource } from 'solid-js'
+import { Show, Suspense, createResource, createSignal } from 'solid-js'
 import { useParams } from '@solidjs/router'
+import { makePersisted } from '@solid-primitives/storage'
 
 export default function Work() {
   const [work] = createResource(async () => {
@@ -13,7 +13,17 @@ export default function Work() {
     let work = await response.json()
     return work[0]
   })
-
+  const storeInCart = (id: any) => {
+    let idList = localStorage.getItem('ids')
+    if (idList == null) {
+      localStorage.setItem('ids', id)
+    } else if (idList.split(' ').includes(id)) {
+      return
+    } else if (id !== null) {
+      let ids = idList + ' ' + id
+      localStorage.setItem('ids', ids)
+    }
+  }
   return (
     <Suspense>
       <Show when={work()}>
@@ -40,7 +50,10 @@ export default function Work() {
             </Show>
             <Show when={work().sold == 0}>
               <p class=''>price: ${work().price}.00</p>
-              <button class='mt-2 bg-sky-300 hover:bg-sky-400 text-white font-bold py-1 px-3 rounded-md'>
+              <button
+                class='mt-2 bg-sky-300 hover:bg-sky-400 text-white font-bold py-1 px-3 rounded-md'
+                onClick={[storeInCart, work().unique_id]}
+              >
                 add to cart
               </button>
             </Show>
