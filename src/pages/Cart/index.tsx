@@ -1,5 +1,5 @@
-import { createResource, Suspense, Show, For } from 'solid-js'
-import { useParams, useNavigate, useLocation } from '@solidjs/router'
+import { createResource, Suspense, Show, For, createEffect } from 'solid-js'
+import { useParams, useNavigate } from '@solidjs/router'
 
 import { state, setState } from '../../stores/CartStore'
 
@@ -8,6 +8,7 @@ export default function Cart() {
   const navigate = useNavigate()
 
   const [cart] = createResource(() => params.cartItems, fetchItems, {
+    initialValue: [],
     deferStream: true,
   })
 
@@ -28,9 +29,20 @@ export default function Cart() {
     navigate(newUrl, { replace: true })
   }
 
+  createEffect(() => {
+    const initialValue = 0
+    const cartPrices = []
+    cart().forEach(item => {
+      cartPrices.push(item.price)
+    });
+    let cartTotal = cartPrices.reduce((a: any, b: any) => a + b, initialValue)
+    cartTotal = cartTotal + state.flatRateShipping
+    setState('total', cartTotal)
+  })
+
   return (
     <Suspense>
-      <Show when={cart()}>
+      <Show when={cart()} fallback={<div>the cart is empty</div>}>
         <div class='grid grid-cols-4'>
           <div class='grid col-span-3'>
             <For each={cart()}>
@@ -46,6 +58,7 @@ export default function Cart() {
                   <div class='grid mb-auto w-3/5 '>
                     <button
                       class='mt-auto mb-auto ml-auto pl-2 pr-2 bg-red-400 hover:bg-red-500 rounded-lg'
+                      alt='Remove Item'
                       onClick={[removeCartItem, cartItem.unique_id]}
                     >
                       <p class='text-right text-white text-sm'>X</p>
@@ -58,20 +71,22 @@ export default function Cart() {
                 </div>
               )}
             </For>
+            <p class='mb-5'></p>
           </div>
           <div class='grid col-span-1'>
             <div class='mt-2 border-l-2 border-l-slate-600'>
               <p class='ml-6'>{`items:`}</p>
               <For each={cart()}>
                 {(cartItem: any) => (
-                  <p class='text-right mr-6'>{`${cartItem.price}.00`}</p>
+                  <p class='text-right mr-6'>{`$${cartItem.price}.00`}</p>
                 )}
               </For>
-              <p class='ml-6'>{`tax:`}</p>
-              <p class='ml-6'>{`shipping:`}</p>
+              <p class='ml-6'>{`shipping: `}</p>
+              <p class='mr-6 text-right '>{`$${state.flatRateShipping}.00`}</p>
               <p class='mt-2 mb-4 ml-6'>{`+`}</p>
               <p class='ml-4 mr-4 border-t-2 border-t-slate-600'></p>
-              <p class='mt-4 ml-6'>{`total:`}</p>
+              <p class='mt-2 ml-6'>{`shipping: `}</p>
+              <p class='mr-6 text-right'>{`$${state.total}.00`}</p>
             </div>
           </div>
         </div>

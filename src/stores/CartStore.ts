@@ -3,6 +3,9 @@ import { createStore } from 'solid-js/store'
 export const [state, setState] = createStore({
   cart: <any>[],
   cartCount: 0,
+  cartTotal: 0,
+  flatRateShipping: 10,
+  cartTotal: 0,
 })
 //
 //const addToCart = (id: any) => {
