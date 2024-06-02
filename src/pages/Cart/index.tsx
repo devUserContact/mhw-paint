@@ -31,7 +31,7 @@ export default function Cart() {
 
   createEffect(() => {
     const initialValue = 0
-    const cartPrices = []
+    const cartPrices: any = []
     cart().forEach(item => {
       cartPrices.push(item.price)
     });
@@ -58,7 +58,6 @@ export default function Cart() {
                   <div class='grid mb-auto w-3/5 '>
                     <button
                       class='mt-auto mb-auto ml-auto pl-2 pr-2 bg-red-400 hover:bg-red-500 rounded-lg'
-                      alt='Remove Item'
                       onClick={[removeCartItem, cartItem.unique_id]}
                     >
                       <p class='text-right text-white text-sm'>X</p>
