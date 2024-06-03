@@ -87,7 +87,9 @@ export default function Cart() {
               <p class='ml-4 mr-4 border-t-2 border-t-slate-600'></p>
               <p class='mt-2 ml-6'>{`total: `}</p>
               <p class='mr-6 text-right'>{`$${state.total}.00`}</p>
-              <PayPalButton />
+              <div class='grid mt-5 ml=5 mr-5 place-items-center'>
+                <PayPalButton />
+              </div>
             </div>
           </div>
         </div>
