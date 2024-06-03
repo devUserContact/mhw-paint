@@ -1,13 +1,14 @@
 //import { createScriptLoader } from '@solid-primitives/script-loader'
 import { loadScript } from '@paypal/paypal-js'
 import { onMount } from 'solid-js'
-import { render } from 'solid-js/web'
+import { state, setState } from '../../stores/CartStore'
+
 export default function PayPalButton() {
   onMount(() => {
     async function loadButton() {
       let paypal
       try {
-        paypal = await loadScript({ clientId: 'test' })
+        paypal = await loadScript({ clientId: 'test', currency: 'USD', disableFunding: 'card' })
       } catch (error) {
         console.error('failed to load the PayPal JS SDK script', error)
       }
