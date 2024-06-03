@@ -1,6 +1,7 @@
 import { createResource, Suspense, Show, For, createEffect } from 'solid-js'
 import { useParams, useNavigate } from '@solidjs/router'
 
+import PayPalButton from '../../components/PayPalButton'
 import { state, setState } from '../../stores/CartStore'
 
 export default function Cart() {
@@ -32,9 +33,9 @@ export default function Cart() {
   createEffect(() => {
     const initialValue = 0
     const cartPrices: any = []
-    cart().forEach(item => {
+    cart().forEach((item) => {
       cartPrices.push(item.price)
-    });
+    })
     let cartTotal = cartPrices.reduce((a: any, b: any) => a + b, initialValue)
     cartTotal = cartTotal + state.flatRateShipping
     setState('total', cartTotal)
@@ -84,8 +85,9 @@ export default function Cart() {
               <p class='mr-6 text-right '>{`$${state.flatRateShipping}.00`}</p>
               <p class='mt-2 mb-4 ml-6'>{`+`}</p>
               <p class='ml-4 mr-4 border-t-2 border-t-slate-600'></p>
-              <p class='mt-2 ml-6'>{`shipping: `}</p>
+              <p class='mt-2 ml-6'>{`total: `}</p>
               <p class='mr-6 text-right'>{`$${state.total}.00`}</p>
+              <PayPalButton />
             </div>
           </div>
         </div>

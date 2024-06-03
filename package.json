@@ -19,6 +19,8 @@
     "vite-plugin-solid": "^2.8.2"
   },
   "dependencies": {
+    "@paypal/paypal-js": "^8.0.5",
+    "@solid-primitives/script-loader": "^2.1.2",
     "@solidjs/router": "^0.13.3",
     "solid-js": "^1.8.11"
   }
