@@ -16,7 +16,7 @@ export default function Cart() {
   async function fetchItems() {
     let cartItems = params.cartItems
     const response = await fetch(
-      `http://localhost:3000/mhwpaint/cart/${cartItems}`,
+      `https://artusercontact.com/mhwpaint/cart/${cartItems}`,
     )
     let cart = await response.json()
     return cart

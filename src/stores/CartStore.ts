@@ -5,7 +5,6 @@ export const [state, setState] = createStore({
   cartCount: 0,
   cartTotal: 0,
   flatRateShipping: 10,
-  total: 0,
 })
 //
 //const addToCart = (id: any) => {
