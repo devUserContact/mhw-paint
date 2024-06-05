@@ -30,7 +30,8 @@ export default function PayPalButton() {
                     'https://artusercontact.com/mhwpaint/orders',
                     {
                       method: 'POST',
-                      mode: 'no-cors',
+                      credentials: "same-origin",
+                      mode: 'cors',
                       headers: {
                         'Content-Type': 'application/json',
                       },
@@ -39,13 +40,14 @@ export default function PayPalButton() {
                       body: JSON.stringify({
                         cart: [
                           {
-                            id: "test_id",
-                            quantity: "test_quant",
+                            id: 1,
+                            quantity: 1,
                           },
                         ],
                       }),
-                    })
-                  
+                    },
+                  )
+
                   const orderData = await response.json()
 
                   if (orderData.id) {
@@ -68,7 +70,7 @@ export default function PayPalButton() {
               async onApprove(data: any, actions: any) {
                 try {
                   const response = await fetch(
-                    `/mhwpaint/orders/${data.orderID}/capture`,
+                    `https://artusercontact/mhwpaint/orders/${data.orderID}/capture`,
                     {
                       method: 'POST',
                       headers: {
