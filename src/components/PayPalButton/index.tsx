@@ -1,10 +1,12 @@
-//import { createScriptLoader } from '@solid-primitives/script-loader'
 import { loadScript } from '@paypal/paypal-js'
 import { onMount } from 'solid-js'
 import { state, setState } from '../../stores/CartStore'
+import { useNavigate } from '@solidjs/router'
+
 
 export default function PayPalButton() {
   onMount(() => {
+ const navigate = useNavigate()  
     async function loadButton() {
       let paypal
       try {
@@ -70,9 +72,11 @@ export default function PayPalButton() {
               async onApprove(data: any, actions: any) {
                 try {
                   const response = await fetch(
-                    `https://mhwpaint/api/orders/${data.orderID}/capture`,
+                    `https://mhwpaint.com/api/orders/${data.orderID}/capture`,
                     {
                       method: 'POST',
+                      credentials: 'same-origin',
+                      mode: 'cors',
                       headers: {
                         'Content-Type': 'application/json',
                       },
@@ -102,6 +106,24 @@ export default function PayPalButton() {
                     // (3) Successful transaction -> Show confirmation or thank you message
                     // Or go to another URL:  actions.redirect('thank_you.html');
 
+			await fetch(
+                    'https://mhwpaint.com/api/set-items-to-sold',
+                    {
+                      method: 'POST',
+                      credentials: 'same-origin',
+                      mode: 'cors',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        cart: [
+                          {
+                            id: state.cart.join('-'),
+                          },
+                        ],
+                      }),
+                    },
+                  )
                     const transaction =
                       orderData?.purchase_units?.[0]?.payments?.captures?.[0] ||
                       orderData?.purchase_units?.[0]?.payments
@@ -114,14 +136,19 @@ export default function PayPalButton() {
                       orderData,
                       JSON.stringify(orderData, null, 2),
                     )
+			
+
                   }
                 } catch (error) {
                   console.error(error)
                   resultMessage(
                     `Sorry, your transaction could not be processed...<br><br>${error}`,
                   )
-                }
-              },
+		  return
+                } 
+			navigate('/thank-you')
+		},
+		
             }).render('#paypal-button-container')
           }
           // Example function to show a result to the user. Your site's UI library can be used instead.
@@ -136,9 +163,11 @@ export default function PayPalButton() {
   })
 
   return (
-    <div id='container'>
+    <>
+    <div class='m-2' id='container'>
       <div id='paypal-button-container'></div>
       <p id='result-message'></p>
     </div>
+    </>
   )
 }

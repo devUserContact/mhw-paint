@@ -1,8 +1,8 @@
 import { createResource, Suspense, Show, For, createEffect } from 'solid-js'
 import { useParams, useNavigate } from '@solidjs/router'
+import { state, setState } from '../../stores/CartStore'
 
 import PayPalButton from '../../components/PayPalButton'
-import { state, setState } from '../../stores/CartStore'
 
 export default function Cart() {
   const params = useParams()

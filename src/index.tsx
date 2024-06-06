@@ -19,6 +19,7 @@ const Gallery = lazy(() => import('./pages/Gallery'))
 const Work = lazy(() => import('./pages/Work'))
 const About = lazy(() => import('./pages/About'))
 const Cart = lazy(() => import('./pages/Cart'))
+const ThankYou = lazy(() => import('./pages/ThankYou'))
 
 
 render(
@@ -29,6 +30,7 @@ render(
       <Route path='/gallery/:work' component={Work} />
       <Route path='/about' component={About} />
       <Route path='/cart/:cartItems' component={Cart} />
+      <Route path='/thank-you' component={ThankYou} />
     </Router>
   ),
   root!,
