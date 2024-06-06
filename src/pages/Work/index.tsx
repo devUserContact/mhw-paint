@@ -10,7 +10,7 @@ export default function Work() {
     const params = useParams()
     let uniqe_id = params.work.split('--').pop()
     const response = await fetch(
-      `https://artusercontact.com/mhwpaint/gallery/${uniqe_id}`,
+      `https://mhwpaint.com/api/gallery/${uniqe_id}`,
     )
     let work = await response.json()
     return work[0]

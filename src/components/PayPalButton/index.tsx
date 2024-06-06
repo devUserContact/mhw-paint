@@ -27,7 +27,7 @@ export default function PayPalButton() {
               async createOrder() {
                 try {
                   const response = await fetch(
-                    'https://artusercontact.com/mhwpaint/orders',
+                    'https://mhwpaint.com/api/orders',
                     {
                       method: 'POST',
                       credentials: "same-origin",
@@ -40,7 +40,7 @@ export default function PayPalButton() {
                       body: JSON.stringify({
                         cart: [
                           {
-                            id: 1,
+                            id: state.cart.join('-'),
                             quantity: 1,
                           },
                         ],
@@ -70,7 +70,7 @@ export default function PayPalButton() {
               async onApprove(data: any, actions: any) {
                 try {
                   const response = await fetch(
-                    `https://artusercontact/mhwpaint/orders/${data.orderID}/capture`,
+                    `https://mhwpaint/api/orders/${data.orderID}/capture`,
                     {
                       method: 'POST',
                       headers: {
@@ -101,6 +101,7 @@ export default function PayPalButton() {
                   } else {
                     // (3) Successful transaction -> Show confirmation or thank you message
                     // Or go to another URL:  actions.redirect('thank_you.html');
+
                     const transaction =
                       orderData?.purchase_units?.[0]?.payments?.captures?.[0] ||
                       orderData?.purchase_units?.[0]?.payments
@@ -135,9 +136,9 @@ export default function PayPalButton() {
   })
 
   return (
-    <div>
-      <p id='resultMessage'></p>
+    <div id='container'>
       <div id='paypal-button-container'></div>
+    	<p id='result-message'></p>
     </div>
   )
 }

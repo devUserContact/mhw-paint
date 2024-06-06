@@ -7,7 +7,7 @@ export default function Gallery() {
   })
 
   async function fetchGallery() {
-    const response = await fetch('https://artusercontact.com/mhwpaint/gallery')
+    const response = await fetch('https://mhwpaint.com/api/gallery')
     let works = await response.json()
     return works
   }
