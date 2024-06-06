@@ -9,9 +9,7 @@ export default function Work() {
     deferStream: true
     const params = useParams()
     let uniqe_id = params.work.split('--').pop()
-    const response = await fetch(
-      `https://mhwpaint.com/api/gallery/${uniqe_id}`,
-    )
+    const response = await fetch(`https://mhwpaint.com/api/gallery/${uniqe_id}`)
     let work = await response.json()
     return work[0]
   })
@@ -47,9 +45,7 @@ export default function Work() {
             <br />
             <p class=''>{work().year_created}</p>
             <p class=''>{work().medium}</p>
-            <p class=''>
-            {`${work().size[0]} x ${work().size[1]} inches`}
-            </p>
+            <p class=''>{`${work().size[0]} x ${work().size[1]} inches`}</p>
             <br />
             <Show when={work().sold == 1}>
               <p class='bold'>SOLD</p>

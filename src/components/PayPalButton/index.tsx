@@ -30,7 +30,7 @@ export default function PayPalButton() {
                     'https://mhwpaint.com/api/orders',
                     {
                       method: 'POST',
-                      credentials: "same-origin",
+                      credentials: 'same-origin',
                       mode: 'cors',
                       headers: {
                         'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ export default function PayPalButton() {
   return (
     <div id='container'>
       <div id='paypal-button-container'></div>
-    	<p id='result-message'></p>
+      <p id='result-message'></p>
     </div>
   )
 }

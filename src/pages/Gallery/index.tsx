@@ -1,7 +1,6 @@
 import { createResource, For, Suspense, Show } from 'solid-js'
 
 export default function Gallery() {
-
   const [works] = createResource(() => Gallery, fetchGallery, {
     deferStream: true,
   })
