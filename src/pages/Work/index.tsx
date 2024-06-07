@@ -39,7 +39,7 @@ export default function Work() {
               alt={work().title}
             />
           </div>
-          <div class='mt-auto mb-auto mr-auto ml-10 text-left'>
+          <div class='mt-auto mb-auto mr-auto ml-5 text-left md:ml-10'>
             <p class=''>mhw</p>
             <p class='italic'>{work().title}</p>
             <br />

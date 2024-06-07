@@ -23,7 +23,7 @@ export default function Gallery() {
                   src={work.image_url}
                   alt={work.title}
                 />
-                <div class='absolute bg-slate-200 bg-opacity-50 opacity-0 group-hover:opacity-100 w-3/5 sm:p-2 md:p-5'>
+                <div class='absolute bg-slate-200 bg-opacity-50 opacity-0 group-hover:opacity-100 p-2 w-3/5 md:p-5'>
                   <a
                     href={
                       'gallery/' +
@@ -36,12 +36,12 @@ export default function Gallery() {
                       work.unique_id
                     }
                   >
-                    <p class='sm:text-lg md:text-xl text-left'>mhw</p>
-                    <p class='sm:text-lg md:text-xl text-left italic'>{work.title}</p>
+                    <p class='ml-2 text-sm md:text-xl text-left'>mhw</p>
+                    <p class='ml-2 text-sm md:text-xl text-left italic'>{work.title}</p>
                     <br />
-                    <p class='sm:text-lg md:text-xl text-left'>{work.year_created}</p>
-                    <p class='sm:text-lg md:text-xl text-left'>{work.medium}</p>
-                    <p class='sm:text-lg md:text-xl text-left'>
+                    <p class='ml-2 text-sm md:text-xl text-left'>{work.year_created}</p>
+                    <p class='ml-2 text-sm md:text-xl text-left'>{work.medium}</p>
+                    <p class='ml-2 text-sm md:text-xl text-left'>
                       {work.size[0]} x {work.size[1]} inches
                     </p>
                   </a>
