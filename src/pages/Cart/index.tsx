@@ -42,8 +42,8 @@ export default function Cart() {
   return (
     <Suspense>
       <Show when={cart()} fallback={<div>the cart is empty</div>}>
-        <div class='grid grid-cols-4'>
-          <div class='grid col-span-3'>
+        <div class='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
+          <div class='grid col-span-1 md:col-span-2 lg:col-span-3'>
             <For each={cart()}>
               {(cartItem: any) => (
                 <div class='grid grid-cols-2 mt-5'>
@@ -54,7 +54,7 @@ export default function Cart() {
                       alt={cartItem.title}
                     />
                   </div>
-                  <div class='grid mb-auto w-3/5 '>
+                  <div class='grid mb-auto w-3/5'>
                     <button
                       class='mt-auto mb-auto ml-auto pl-2 pr-2 bg-red-400 hover:bg-red-500 rounded-lg'
                       onClick={[removeCartItem, cartItem.unique_id]}
@@ -72,8 +72,8 @@ export default function Cart() {
             <p class='mb-5'></p>
           </div>
           <div class='grid col-span-1'>
-            <div class='mt-2 border-l-2 border-l-slate-600'>
-              <p class='ml-6'>{`items:`}</p>
+            <div class='mt-2 md:border-l-2 border-l-slate-600'>
+              <p class='ml-6 mt-10 md:mt-0'>{`items:`}</p>
               <For each={cart()}>
                 {(cartItem: any) => (
                   <p class='text-right mr-6'>{`$${cartItem.price}.00`}</p>
@@ -85,7 +85,7 @@ export default function Cart() {
               <p class='ml-4 mr-4 border-t-2 border-t-slate-600'></p>
               <p class='mt-2 ml-6'>{`total: `}</p>
               <p class='mr-6 text-right'>{`$${state.total}.00`}</p>
-              <div class='grid mt-5 ml=5 mr-5 place-items-center'>
+              <div class='grid place-items-center mt-10 mb-10 md:mt-5 md:ml-5 md:mr-5'>
                 <PayPalButton />
               </div>
             </div>
