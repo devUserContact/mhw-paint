@@ -12,7 +12,7 @@ export default function ThankYou() {
       <div class='grid h-20 mt-20 place-items-center'>
         <h1 class='grid text-xl'>{`Thank you for your patronage <3`}</h1>
         <h1 class='grid text-xl'>
-          {`You can expect an email with package's tracking information shortly.`}
+          {`You can expect an email that contains your package's tracking information shortly.`}
         </h1>
       </div>
     </div>
