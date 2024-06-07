@@ -2,3 +2,5 @@ node_modules
 dist
 src/assets/Gallery.toml
 .env
+nohup.out
+

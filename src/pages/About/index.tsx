@@ -7,12 +7,11 @@ export default function About() {
       <p class='mt-5 w-1/2 text-m'>
         I am a human and a painter.
         <br />
-        <br />I am currently in the process of building this site.
-        <br />I hope to implement a function that facilitates the purchasing of
-        my art via PayPal with the ability to make and except offers!
+        <br />{`I am always creating art.`}
+        <br />{`I am also working on building this site to deliver a better user experience.`}
         <br />
         <br />
-        I also hope to include a contact page for commissions and general
+        I hope to include a contact page for commissions and general
         requests.
         <br />
         <br />
