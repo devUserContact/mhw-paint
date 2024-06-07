@@ -28,7 +28,7 @@ export default function PayPalButton() {
               async createOrder() {
                 try {
                   const response = await fetch(
-                    'https://mhwpaint.com/api/orders',
+                    `${import.meta.env.VITE_BASE_URL}/api/orders`,
                     {
                       method: 'POST',
                       credentials: 'same-origin',
@@ -71,7 +71,7 @@ export default function PayPalButton() {
               async onApprove(data: any, actions: any) {
                 try {
                   const response = await fetch(
-                    `https://mhwpaint.com/api/orders/${data.orderID}/capture`,
+                    `${import.meta.env.VITE_BASE_URL}/api/orders/${data.orderID}/capture`,
                     {
                       method: 'POST',
                       credentials: 'same-origin',
@@ -105,21 +105,24 @@ export default function PayPalButton() {
                     // (3) Successful transaction -> Show confirmation or thank you message
                     // Or go to another URL:  actions.redirect('thank_you.html');
 
-                    await fetch('https://mhwpaint.com/api/set-items-to-sold', {
-                      method: 'POST',
-                      credentials: 'same-origin',
-                      mode: 'cors',
-                      headers: {
-                        'Content-Type': 'application/json',
+                    await fetch(
+                      `${import.meta.env.VITE_BASE_URL}/api/set-items-to-sold`,
+                      {
+                        method: 'POST',
+                        credentials: 'same-origin',
+                        mode: 'cors',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                          cart: [
+                            {
+                              id: state.cart.join('-'),
+                            },
+                          ],
+                        }),
                       },
-                      body: JSON.stringify({
-                        cart: [
-                          {
-                            id: state.cart.join('-'),
-                          },
-                        ],
-                      }),
-                    })
+                    )
                     const transaction =
                       orderData?.purchase_units?.[0]?.payments?.captures?.[0] ||
                       orderData?.purchase_units?.[0]?.payments
