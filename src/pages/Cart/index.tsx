@@ -37,6 +37,9 @@ export default function Cart() {
     let cartTotal = cartPrices.reduce((a: any, b: any) => a + b, initialValue)
     cartTotal = cartTotal + state.flatRateShipping
     setState('total', cartTotal)
+    if (state.cartCount == 0) {
+      navigate('/cart')
+    }
   })
 
   return (
