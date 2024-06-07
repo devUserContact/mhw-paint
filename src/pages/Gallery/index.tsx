@@ -6,7 +6,7 @@ export default function Gallery() {
   })
 
   async function fetchGallery() {
-    const response = await fetch('https://mhwpaint.com/api/gallery')
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/gallery`)
     let works = await response.json()
     return works
   }

@@ -9,7 +9,7 @@ export default function Work() {
     deferStream: true
     const params = useParams()
     let uniqe_id = params.work.split('--').pop()
-    const response = await fetch(`https://mhwpaint.com/api/gallery/${uniqe_id}`)
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/gallery/${uniqe_id}`)
     let work = await response.json()
     return work[0]
   })
