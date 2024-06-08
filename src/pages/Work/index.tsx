@@ -25,7 +25,6 @@ export default function Work() {
       setState(produce((state) => state.cart.push(id)))
       setState('cartCount', state.cartCount + 1)
     }
-    console.log(state.cart.join(' '), state.cartCount)
   }
 
   return (
