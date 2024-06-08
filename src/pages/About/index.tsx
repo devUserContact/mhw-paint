@@ -10,7 +10,7 @@ export default function About() {
         <br />{`I am always creating art.`}
         <br />
         <br />
-        enjoy the 
+        please enjoy the 
         <a
           class='italic text-blue-500'
           href='https://www.mhwpaint.com/gallery'
