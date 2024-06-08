@@ -15,7 +15,9 @@ export default function Cart() {
 
   async function fetchItems() {
     let cartItems = params.cartItems
-    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/cart/${cartItems}`)
+    const response = await fetch(
+      `${import.meta.env.VITE_BASE_URL}/api/cart/${cartItems}`,
+    )
     let cart = await response.json()
     return cart
   }
@@ -75,7 +77,7 @@ export default function Cart() {
             <p class='mb-5'></p>
           </div>
           <div class='grid col-span-1'>
-            <div class='mt-2 md:border-l-2 border-l-slate-600'>
+            <div class='mt-2 md:border-l-2 md:border-l-slate-600'>
               <p class='ml-6 mt-10 md:mt-0'>{`items:`}</p>
               <For each={cart()}>
                 {(cartItem: any) => (

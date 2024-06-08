@@ -143,7 +143,25 @@ export default function PayPalButton() {
                   )
                   return
                 }
+
+                await fetch(
+                  `${import.meta.env.VITE_BASE_URL}/api/input-order-ticket`,
+                  {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    mode: 'cors',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      sale: {
+                        id: state.cart.join('-'),
+                      },
+                    }),
+                  },
+                )
                 navigate('/thank-you')
+
               },
             }).render('#paypal-button-container')
           }
