@@ -8,14 +8,9 @@ export default function About() {
         I am a human and a painter.
         <br />
         <br />{`I am always creating art.`}
-        <br />{`I am also working on building this site to deliver a better user experience.`}
         <br />
         <br />
-        I hope to include a contact page for commissions and general
-        requests.
-        <br />
-        <br />
-        In the meantime you are free to enjoy the 
+        enjoy the 
         <a
           class='italic text-blue-500'
           href='https://www.mhwpaint.com/gallery'
