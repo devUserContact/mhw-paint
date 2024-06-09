@@ -2,7 +2,7 @@ import './index.css'
 
 import { lazy } from 'solid-js'
 import { render } from 'solid-js/web'
-import { Router, Route } from '@solidjs/router'
+import { Router, Route, Navigate } from '@solidjs/router'
 
 import App from './App'
 
@@ -18,6 +18,9 @@ const Home = lazy(() => import('./pages/Home'))
 const Gallery = lazy(() => import('./pages/Gallery'))
 const Work = lazy(() => import('./pages/Work'))
 const About = lazy(() => import('./pages/About'))
+const Cart = lazy(() => import('./pages/Cart'))
+const ThankYou = lazy(() => import('./pages/ThankYou'))
+
 
 render(
   () => (
@@ -26,6 +29,8 @@ render(
       <Route path='/gallery' component={Gallery} />
       <Route path='/gallery/:work' component={Work} />
       <Route path='/about' component={About} />
+      <Route path='/cart/:cartItems' component={Cart} />
+      <Route path='/thank-you' component={ThankYou} />
     </Router>
   ),
   root!,
